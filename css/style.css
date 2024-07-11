@@ -6,6 +6,8 @@
     --secondary-txt: #444;
     --tertiary: #ff8a1d;
 }
+.primary-bg{background-color: var(--primary-bg);}
+.white-bg{background-color: #fff;}
 body{font-family: "Lato", sans-serif;}
 #top{
     background-color: #000;
@@ -35,19 +37,17 @@ nav{
 }
 #menu li {display: none;}
 .left-part{padding: 20px;}
-
 .left-part h1{ 
     font-size: 2rem;
     color: var(--primary-txt);
     padding: 20px 0;
 }
-
 .left-part p{ 
     font-size: 1rem;
     line-height: 1.5rem;
     color: var(--secondary-txt);
 }
-.right-part img{width: 100%;}
+#first .right-part img, #about .right-part img{width: 100%;}
 .btn{
     width: 180px;
     height: 50px;
@@ -78,9 +78,10 @@ nav{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 350px;
+    width: 300px;
     height: 250px;
     margin: 10px;
+    width: 90%;
 }
 .box svg{fill: #726dae;}
 .box h2{
@@ -103,23 +104,21 @@ nav{
     justify-content: center;
     align-items: center;
 }
-#about .left-part{height: 50vh;}
 #about .left-part h1{
     text-transform: uppercase;
     color: #000;
     font-size: 2rem;
 }
-#about .right-part img{width: 90vw;}
 #second{
     background-color: var(--primary-bg);
     margin: 80px 0;
-    height: 60vh;
     display: flex;
     align-items: center;
+    height: 100vh;
 }
 #second .left-part h1{
     text-transform: uppercase; 
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 #second .right-part{display: none;}
 .services, .boxes{
@@ -132,9 +131,7 @@ nav{
     margin-bottom: 60px;
     text-transform: uppercase;
 }
-.services .box h2{
-    color: #000;
-}
+.services .box h2{color: #000;}
 .box img{height: 70px;}
 .box p{
     padding: 2rem 1rem; 
@@ -144,27 +141,29 @@ nav{
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 90px;
+    justify-content: center;
 }
 #contact h1{
-    align-self: flex-start;
-    font-size: 2rem;
-    padding: 20px;
+    font-size: 1.5rem;
     text-transform: uppercase;
+    text-align: center;
+    margin-top: 60px;
 }
+#contact .btn{margin-bottom: 60px;}
 .col{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 .row-1{
     display: flex;
     flex-direction: column;
     width: 100%;
+    justify-content: center;
+    align-items: center;
 }
 input{
     height: 50px;
+    width: 70%;
     box-shadow: 1px 1px 10px #ccc;
     border-radius: 1px;
     margin: 20px 40px 0 0;
@@ -173,7 +172,8 @@ input{
 input:last-of-type{height: 100px;}
 .row-2 iframe{
     margin-top: 20px;
-    width: 90%;
+    width: 90vw;
+    overflow-x: hidden;
 }
 footer{
     background-color: var(--secondary-bg);
@@ -205,9 +205,7 @@ footer #icons{
     justify-content: center;
     align-items: center;
 }
-#icons{
-    height: 20px;
-}
+#icons{height: 20px;}
 #icons p{
     text-align: center;
     z-index: 1;
@@ -217,11 +215,13 @@ footer #icons{
 footer #icons i{
     font-size: 2rem;
     background-color: var(--primary-txt);
-    padding: 30px;
+    height: 90px;
     border-radius: 50%;
     width: 90px;
     z-index: 1;
-    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 #icons hr{
     position: absolute;
@@ -241,6 +241,7 @@ footer #icons i{
     margin: 40px auto;
     background-color: #fff;
 }
+
 @media only screen and (min-width: 768px) {
     nav{flex-direction: row;}
     #menu {display: flex;}
@@ -255,12 +256,12 @@ footer #icons i{
         align-items: center;
     }
     .container{
-        padding: 0 90px;
+        max-width: 1200px;
         margin: auto;
         display: flex;
     }
     .content .left-part{width: 50%;}
-    .left-part h1{font-size: 3rem;}
+    .left-part h1{font-size: 2.8rem;}
     .orange-btn:hover{
         background-color: transparent;
         border: 2px solid var(--tertiary);
@@ -273,38 +274,30 @@ footer #icons i{
         color: var(--primary-txt);
         transition: .1s;
     }
+    .left-part{padding: 0;}
     .right-part{width: 50%;}
-    .features{
-        height: 400px;
-        flex-direction: row;
+    .features{flex-direction: row;}
+    .box{
+        max-width: 300px;
+        margin: 60px 10px;
     }
-    #about{
-        flex-direction: row;
-        height: 500px;
-    }
-    #about .left-part{
-        width: 40vw;
-        height: initial;
-    }
+    #about{flex-direction: row;}
+    #about .left-part{width: 40vw;}
     #about .right-part img{width: 40vw}
-    #second{height: 900px;}
-    #second .right-part{display: flex;}
-    #second .right-part img{
-        width: 100%;
-        object-fit: contain
+    #second .right-part{
+        display: block; 
+        width: 50%;
     }
+    #second .right-part img{width: 80%;}
+    #second .left-part{width: 50%;}
     .services .boxes{
         flex-direction: row;
         flex-wrap: wrap;
     }
-    #contact{height: 100vh;}
     .col{flex-direction: row;}
     .row-1 input{width: 40vw;}
     .row-2 iframe{width: 40vw;}
-    #contact .btn{
-        align-self: flex-start; 
-        margin-left: 20px;
-    }
+    #contact{min-height: 100vh;}
     footer #icons{
         flex-direction: row;
         justify-content: space-between;
@@ -313,10 +306,10 @@ footer #icons i{
     footer .part1{height: 60vh;}
     .col-1{height: 30vh;}
     #icons hr{
-       width: 80%;
-       height: 2px;
-       top: 30%;
-       left: 10%;
+        width: 80%;
+        height: 2px;
+        top: 30%;
+        left: 10%;
     }
     #icons i:hover{background-color: var(--tertiary);}
 }
