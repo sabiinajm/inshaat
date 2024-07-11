@@ -60,9 +60,9 @@ nav{
 .orange-btn{background-color: var(--tertiary);}
 .blue-btn{background-color: var(--primary-txt);}
 .content .right-part {
-    height: 100vh;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 .features{
     display: flex;
@@ -253,7 +253,6 @@ footer #icons i{
     .content {
         justify-content: center;
         align-items: center;
-        height: 100vh;
     }
     .container{
         padding: 0 90px;
